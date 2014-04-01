@@ -58,10 +58,6 @@ NeoBundle 'vim-scripts/tlib'
 " and much more
 NeoBundle 'Shougo/unite.vim'
 
-" Snippets engine with good integration with neocomplcache
-NeoBundle 'Shougo/neosnippet'
-" Default snippets for neosnippet, i prefer vim-snippets
-"NeoBundle 'Shougo/neosnippet-snippets'
 " Default snippets
 NeoBundle 'honza/vim-snippets'
 
@@ -164,8 +160,13 @@ NeoBundle 'Shougo/neocomplcache.vim'
 " Most recent files source for unite
 NeoBundle 'Shougo/neomru.vim'
 
-NeoBundle 'nite4g/mustang-vim'
+NeoBundle 'nite4g/vimcolors'
 
+NeoBundle 'hdima/python-syntax'
+
+" JShint :)
+" But not necessary with syntastics
+" NeoBundle 'walm/jshint.vim'
 
 " Installing bundles for the first time
 if iCanHazNeoBundle == 0
@@ -318,23 +319,6 @@ nmap <silent> <leader>tn :TernRename<CR>
 let g:solarized_termtrans=1
 
 "-------------------------
-" neosnippets
-"
-
-" Enable snipMate compatibility
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
-" Disables standart snippets. We use vim-snippets bundle instead
-let g:neosnippet#disable_runtime_snippets = { '_' : 1 }
-
-" Expand snippet and jimp to next snippet field on Enter key.
-imap <expr><CR> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-
-"-------------------------
 " vim-airline
 
 " Colorscheme for airline
@@ -361,26 +345,6 @@ let g:airline_section_y = ''
 " Don't display filetype
 let g:airline_section_x = ''
 
-"-------------------------
-" neocomplcache
-
-" Enable NeocomplCache at startup
-let g:neocomplcache_enable_at_startup = 1
-
-" Max items in code-complete
-let g:neocomplcache_max_list = 10
-
-" Max width of code-complete window
-let g:neocomplcache_max_keyword_width = 80
-
-" Code complete is ignoring case until no Uppercase letter is in input
-let g:neocomplcache_enable_smart_case = 1
-
-" Auto select first item in code-complete
-let g:neocomplcache_enable_auto_select = 1
-
-" Disable auto popup
-let g:neocomplcache_disable_auto_complete = 1
 
 " Smart tab Behavior
 function! CleverTab()
@@ -425,10 +389,8 @@ set completeopt-=preview
 " Use solarized colorscheme
 " Setting up light color scheme
 "set background=light
-
 set background=dark
-colorscheme mustang
-
+colorscheme blacklight
 " set highlighting for colorcolumn
 "highlight ColorColumn ctermbg=darkGrey
 
